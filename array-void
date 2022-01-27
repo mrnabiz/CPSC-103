@@ -1,0 +1,98 @@
+#include<stdio.h>
+     
+main()
+{      
+       int a1[5], a2[10];
+       int eshterak[]={0,0,0,0,0};
+       int ejtema[15], i,q;
+       for (i=0;i<15;i++)
+       ejtema[i]=0;
+        
+       void readarray(int , int *);
+       void eshterakarray(int *,int *,int *);
+       void ejtemaarray(int*,int*,int*);
+       void printarray(int *,int *);
+       
+       readarray(5, a1);
+       readarray(10, a2);
+       eshterakarray(a1,a2,eshterak);
+       ejtemaarray(a1,a2,ejtema);
+       printarray(ejtema,eshterak);
+       scanf("%d",&q);
+}
+
+void readarray(int i,  int *w)
+{
+     printf("vorude aezaye arraye:");
+     for(int j=0;j<i;j++) scanf("%d",w+j);
+}
+
+void eshterakarray(int *arr1,int *arr2,int *eshterak)
+{
+    
+     int *p,n=0;
+     p=&n;
+     int m=0,i;  
+     for(i=0;i<5;i++)
+        {
+                for(int j=0;j<10;j++)
+                {
+                        
+                      if(*(arr1+i)==*(arr2+j))
+                      {
+                               *(eshterak+m) = arr1[i];
+                               m++;
+                               *p=*p+1;
+                               
+                      }
+                      
+                }
+        }
+        
+       
+      
+      if (n==0)              
+      printf("Eshterak Nadarad\n");
+      
+              
+}
+
+
+void ejtemaarray(int *arr1, int *arr2,int *ejtema)
+{
+     int j, k, l, m=0;
+     for(j=0;j<5;j++){
+                      for(k=m;k>=0;k--){
+                                        if(*(arr1+j)==*(ejtema+k)) break;
+                                        else if(k==0){
+                                                              *(ejtema+m) = *(arr1+j);
+                                                              m++;
+                                                              }
+                                        }
+                      }
+                      for(l=0;l<10;l++){
+                                        for(k=m;k>=0;k--){
+                                        if(*(arr2+l)==*(ejtema+k)) break;
+                                        else if(k==0){
+                                                             *(ejtema+m) = *(arr2+l);
+                                                              m++;
+                                                              }
+                                        }
+                      }
+    
+}
+     
+
+void printarray(int *ejtema,int *eshterak)
+{
+     
+     printf("Eshterak:\n");
+     for (int i=0; i<5;i++) 
+         printf("%d\n",*(eshterak+i));
+        
+      printf("\n\nEjtema:\n");
+      for (int i=0; i<15;i++)       
+         printf("%d\n",*(ejtema+i));
+      
+}
+    
