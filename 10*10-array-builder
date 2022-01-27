@@ -1,0 +1,28 @@
+#include<stdio.h>
+#define n 10
+main()
+{
+	int h,i,j,o,p,x;
+	int a[n][n],b[n],c[n];
+	o=1;
+	p=1;
+	for(i=0;i<n;i++){
+	scanf("%d",&b[i]);
+    o=o*b[i];}
+    printf("\n\n");
+	for(j=0;j<n;j++){
+	scanf("%d",&c[j]);
+	p=p*c[j];}
+	printf("\n\n%d         %d\n\n",o,p);
+	x=o*p;
+	printf("%d\n\n",x);
+	for(i=0;i<n;i++){
+	for(j=0;j<n;j++)
+	a[i][j]=b[i]*c[j];}
+	for(i=0;i<n;i++){
+	for(j=0;j<n;j++)
+	printf("%-5d",a[i][j]);
+	if(j=n)
+	printf("\n");}
+	scanf("%d",&h);
+}
