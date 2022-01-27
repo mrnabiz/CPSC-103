@@ -1,0 +1,79 @@
+#include<stdio.h>
+main()
+{
+	printf("--------------------------------------------------------------------------------\n");
+	printf("---------------------------Be Name Dadare Hasti Bakhsh--------------------------\n");
+	printf("--------------** Be System Elam Natayeje Daneshjoii Khosh Amadid **-------------\n");
+	printf("______________________Marhaleye 1 : Vorood Ettelaate Shakhsi____________________\n\n");
+	printf("*Dar Zamane Voroode Ettelaat Be In Nokte Tavajoh Dashte \n Bahsid Ke Nemitavanid Az Dokmeye Space Estefade Konid.\n\n");
+	printf("*Yeki Az Vijegihaye In System Ghabeliate Pardazeshe Nomerate Chand Daneshjoo\n Mibashad.\n\n");
+	int r,y,k;
+	printf("*Tedade Daneshjooha Ra Ra Vared Namiid ? ");
+	scanf("%d",&r);
+	#define p r
+	for(y=0;y<p;y++){
+		printf("**Ettelaate Marboot Be Daneshjooye Shomareye: %d\n",y+1);
+    printf("*Shoma Mitavanid Tavasot In Barname Tedad Doroose Darkhasti Ra Entekhab Konid.\n\n");
+	int q;
+	printf("Tedad Doroose Morede Nazare Khod Ra Baraye Daneshjoo Vared Konid ? ");
+    scanf("%d",&q);
+	#define n q
+	int t[n],dnum[n],gnum[n],f,g,i,v;
+	float s[n],m,e[n],h;
+	char a1[50],a2[50],a3[50],a4[50],a5[50],dname[n][50];
+	printf("1)lotfan Name Khod Ra Vared Konid ? ");
+	scanf("%s",&a1);
+	printf("2)Name Khanevadegie Khod Ra Vared Namaiid ? ");
+	scanf("%s",&a2);
+	printf("4)Shomareye Daneshjoii ? ");
+	scanf("%s",&a3);
+	printf("5)Lotfan Tarikh Tavalod Khod Ra Ba Format YYYY/MM/DD Vared Konid ? ");
+	scanf("%s",&a4);
+	printf("6)Shomareye Terme Morede Nazar ? ");
+	scanf("%s",&a5);
+	printf("\n____________________Marhaleye 2 : Vorood Ettelaate Amoozeshi____________________\n\n");
+	printf("**Shayane Zekr Ast Ke Dar In Ghesmat Az System Shoma Nemitavanid Baraye Pasokh \nDadan Be Soalhaye Gheshmathaye B,C Az Horoof Estefade Konid.**");
+	v=0;
+	for(i=0;i<n;i++){
+	v=i+1;
+	printf("\n\nLotfan Etelaate Morede Niaz Dar Morede Darse Shomareye %d Ra Vared Konid. \n\n",v);
+	printf("A)Name Darse Mored Nazar Ra Vared Konid ? ");
+    scanf("%s",&dname[i]);
+   	printf("B)Shomareye Amoozeshie Darse Morede Nazar Ra Vared Konid ? ");
+	scanf("%d",&dnum[i]);
+	printf("C)Kode Goroohe Darsi Ra Vared Konid ? ");
+	scanf("%d",&gnum[i]);
+	printf("D)Tedad Vahedhaye Darse Morede Nazar Ra Vared Konid ? ");
+	scanf("%d",&t[i]);
+    printf("E)Nomreye Kasb Shodeh Ra Vared Konid ? ");
+	scanf("%f",&s[i]);}
+	m=0;
+	g=0;
+	f=0;
+	for(i=0;i<n;i++){
+	f=f+t[i];
+	e[i]=t[i]*s[i];
+	m=m+e[i];
+	if(s[i]>=10)
+	g=g+t[i];}
+	h=m/f;
+	printf("--------------------------------------------------------------------------------\n");
+	printf("                                     IRI                                        \n");
+	printf("                                     MSTI                                       \n");
+	printf("                  Iran University Of Science And Technology                     \n");
+	printf("Karnameye Daneshjoii Terme : %-4s ----------------------------------------------\n",a5);
+	printf("--Nam Va Name Khanevadegie Daneshjoo : %s %s\n",a1,a2);
+	printf("--Shomareye Daneshjoii : %s\n",a3);
+	printf("-----------------------------------Tarikhe Tavalod : %s\n\n",a4);
+	printf(" Radif--Name Dars--Shomareye Dars--Kode Goroohe Darsi--Tedad Vahed--Nomreye Dars\n");
+	for(i=0;i<n;i++)
+	printf(" %-7d%-11s%-16d%-20d%-13d%-12f\n",i+1,dname[i],dnum[i],gnum[i],t[i],s[i]);
+	printf("_____________________Vaziate Tahsili_________________________\n\n");
+	printf(" -Tedadad Vahedhaye Akhz Shodeh : %d  -Tedad Vahedhaey Gozarande Shode : %d  \n\n -Majmooe Emtiazat : %f       -Moaddele Term : %f\n\n",f,g,m,h);
+	if(h>=10)
+	printf("**Shoma In Term Ra Ba Movafaghiat Poshte Sar Gozashteid**\n\n\n");
+	if(h<10)
+	printf("**Moteassefane Shoma In Term Ra Mashroot Shodeid**\n\n\n");}
+	scanf("%d",&k);
+}
+	
