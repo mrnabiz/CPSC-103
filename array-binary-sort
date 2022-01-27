@@ -1,0 +1,61 @@
+#include<stdio.h>
+#include<conio.h>
+main()
+{
+      int array[15],temp,max,tempmax;
+      void sortarr(int *);
+      printf("Enter 20 numbers from array:\n");
+      
+      for (int i=0;i<10;i++)
+      {
+          scanf("%d",&array[i]);        
+      }
+      
+      sortarr(array);
+      
+      printf("Enter extra 5 numbers:\n");
+      
+      max=10;
+      for(int i=0;i<5;i++)
+      {
+               scanf("%d",&temp);
+               max=max+1;
+               tempmax=max;
+               for(int i=0;i<max;i++)
+               {
+                        if(temp<=array[i])
+                        {
+                                      for(int j=(max-1);j>=i;j--)
+                                      {
+                                                       array[tempmax]=array[j];
+                                                       tempmax=tempmax-1;
+                                      }
+                                                       array[i]=temp;
+                                      break;
+                                      
+                        }
+               }
+                      
+      }
+      for (int i=0;i<15;i++)
+      printf("\n%d",array[i]);
+      
+      getch();
+            
+      
+}
+
+void sortarr(int *w)
+{
+     int k;
+     for(int i=0;i<9;i++)
+     {
+          for(int j=i+1;j<10;j++)
+          {
+               if(*(w+i)>*(w+j))
+               {
+                    k=*(w+i); *(w+i)=*(w+j);   *(w+j)=k;
+               }
+          }
+     }
+}
