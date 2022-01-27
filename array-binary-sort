@@ -1,0 +1,53 @@
+#include<stdio.h>
+#include<conio.h>
+main()
+{
+     int n,a,x,found;
+     int search(int,int,int,int *);
+     
+     
+     printf("Enter Number of array houses:\n");
+     scanf("%d",&n);  
+    #define a n  
+     int array[a];
+     int low=0;
+     int high=a-1;
+     
+     printf("Khanehaye Araye ra Vared Konid:(Adad az kuchak b bozorg vared shavand !)\n");
+     for (int i=0;i<a;i++)
+     {
+         scanf("%d",&array[i]);    
+     }   
+     
+     printf("Enter the Number You Want To Search:\n");
+     scanf("%d",&x);
+    
+     found = search(low,high,x,array);
+     if (found ==0) printf ("Not Found\n");
+     else printf("It's in %dth house:\n",found);
+     getch();
+     
+}
+
+
+int search(int low,int high,int a,int *w)
+{
+    int mid;
+    
+    mid = (high+low)/2;
+    
+    if (a == *(w+mid))
+    {
+       return(mid+1);           
+    }
+    
+    if (low>=high) return(0);
+    
+    else if (a>*(w+mid))
+         return(search(mid+1,high,a,w));     
+    
+    else
+         return(search(low,mid-1,a,w));
+         
+    
+}
